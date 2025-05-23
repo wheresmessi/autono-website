@@ -1,73 +1,108 @@
 import React from 'react';
-import { Car, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import '../styles/colors.css';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="bg-black text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <Car className="h-6 w-6" />
-              <span className="font-bold text-xl tracking-wider">AUTONO</span>
+    <footer style={{ backgroundColor: 'var(--color-background-primary)' }} className="py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Logo and Navigation Links */}
+          <div className="md:col-span-3">
+            <div className="mb-12">
+              <img 
+                src="/src/assets/image.png" 
+                alt="Autono Logo" 
+                className="h-8 w-auto"
+              />
             </div>
-            <p className="text-gray-400 mb-6">
-              Reimagining transportation with autonomous technology that prioritizes safety, sustainability, and accessibility.
+            <nav className="space-y-4">
+              <a href="#" className="block transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>Technology</a>
+              <a href="#" className="block transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>About</a>
+              <a href="#" className="block transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>Careers</a>
+            </nav>
+          </div>
+
+          {/* Contact Information */}
+          <div className="md:col-span-4">
+            <div className="space-y-4">
+              <p style={{ color: 'var(--color-text-secondary)' }}>Tel: 123-456-7890</p>
+              <p style={{ color: 'var(--color-text-secondary)' }}>Email: info@mysite.com</p>
+              <div className="pt-4">
+                <p style={{ color: 'var(--color-text-secondary)' }}>500 Terry Francine St</p>
+                <p style={{ color: 'var(--color-text-secondary)' }}>San Francisco, CA 94158</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Subscribe Form */}
+          <div className="md:col-span-5">
+            <h3 className="text-xl font-medium mb-6" style={{ color: 'var(--color-heading-primary)' }}>SUBSCRIBE</h3>
+            <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
+              Sign up to receive Autono news and updates.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Company</h3>
-            <ul className="space-y-4">
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#careers" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#press" className="text-gray-400 hover:text-white transition-colors">Press</a></li>
-              <li><a href="#blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Technology</h3>
-            <ul className="space-y-4">
-              <li><a href="#vehicles" className="text-gray-400 hover:text-white transition-colors">Vehicles</a></li>
-              <li><a href="#autonomy" className="text-gray-400 hover:text-white transition-colors">Autonomy</a></li>
-              <li><a href="#safety" className="text-gray-400 hover:text-white transition-colors">Safety</a></li>
-              <li><a href="#sustainability" className="text-gray-400 hover:text-white transition-colors">Sustainability</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Contact</h3>
-            <ul className="space-y-4">
-              <li><a href="#support" className="text-gray-400 hover:text-white transition-colors">Support</a></li>
-              <li><a href="#locations" className="text-gray-400 hover:text-white transition-colors">Locations</a></li>
-              <li><a href="#partners" className="text-gray-400 hover:text-white transition-colors">Partner with Us</a></li>
-            </ul>
+            <form className="space-y-6">
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="block mb-2" style={{ color: 'var(--color-text-secondary)' }}>
+                    Email <span style={{ color: 'var(--color-text-primary)' }}>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full py-2 focus:outline-none"
+                    style={{ 
+                      borderBottom: '1px solid var(--color-border-secondary)',
+                      backgroundColor: 'transparent'
+                    }}
+                    required
+                  />
+                </div>
+                <div className="flex items-start space-x-2">
+                  <input
+                    type="checkbox"
+                    id="subscribe"
+                    className="mt-1"
+                    required
+                  />
+                  <label htmlFor="subscribe" style={{ color: 'var(--color-text-secondary)' }}>
+                    Yes, subscribe me to your newsletter. <span style={{ color: 'var(--color-text-primary)' }}>*</span>
+                  </label>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="px-8 py-3 rounded-full transition-colors duration-300"
+                style={{ 
+                  backgroundColor: 'var(--color-button-primary)',
+                  color: 'var(--color-button-primary-text)'
+                }}
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
-        
-        <div className="pt-8 border-t border-gray-800 text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {currentYear} Autono. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#terms" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#cookies" className="hover:text-white transition-colors">Cookie Policy</a>
+
+        {/* Footer Bottom */}
+        <div className="mt-20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+            © 2035 by Autono. Powered and secured by{' '}
+            <a href="#" className="underline">
+              Wix
+            </a>
+          </p>
+          <div className="flex space-x-6">
+            {[Linkedin, Facebook, Twitter, Instagram].map((Icon, index) => (
+              <a 
+                key={index}
+                href="#" 
+                className="transition-colors duration-200"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
