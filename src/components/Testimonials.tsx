@@ -10,7 +10,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, offset = '' }) => (
   <div
-    className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ${offset}`}
+    className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2 ${offset}`}
     style={{ backgroundColor: 'white', position: 'relative' }}
   >
     <div className="flex items-start gap-4">
@@ -33,7 +33,7 @@ const Testimonials: React.FC = () => {
     {
       name: "Mehwish",
       text: "Compliment interested discretion estimating on stimulated apartments oh.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Elizabeth Jeff", 
@@ -89,7 +89,7 @@ const Testimonials: React.FC = () => {
         <img 
           src="/assets/logo-orange.png" 
           alt="Autono Logo" 
-          className="w-[300px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
+          className="w-[350px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
         />
       </div>
 
