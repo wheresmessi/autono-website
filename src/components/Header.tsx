@@ -38,18 +38,17 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-end flex-1 space-x-8">
             {/* Navigation */}
             <nav className="hidden md:flex space-x-8">
-              
               <a 
                 href="#vehicles" 
-                className="text-sm font-medium transition-colors duration-200 hover:opacity-70"
-                style={{ color: 'var(--color-primary-light)' }}
+                className="text-sm font-medium transition-colors duration-200 hover:text-teal-400"
+                style={{ color: 'white' }}
               >
                 Products
               </a>
               <a 
                 href="#about" 
-                className="text-sm font-medium transition-colors duration-200 hover:opacity-70"
-                style={{ color: 'var(--color-primary-light)' }}
+                className="text-sm font-medium transition-colors duration-200 hover:text-teal-400"
+                style={{ color: 'white' }}
               >
                 About
               </a>
@@ -57,17 +56,18 @@ const Header: React.FC = () => {
 
             {/* Contact Button */}
             <button 
-              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-colors duration-300 hover:opacity-90"
+              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-all duration-300 border-2 hover:bg-teal-400 hover:border-teal-400 hover:text-white"
               style={{ 
-                backgroundColor: 'var(--color-button-primary)',
-                color: 'var(--color-button-primary-text)',
+                backgroundColor: 'transparent',
+                color: 'black',
+                borderColor: 'black'
               }}
             >
               Contact Us
             </button>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden" style={{ color: 'var(--color-text-primary)' }}>
+            <button className="md:hidden" style={{ color: 'white' }}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
