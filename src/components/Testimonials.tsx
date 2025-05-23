@@ -9,7 +9,10 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, offset = '' }) => (
-  <div className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ${offset}`}>
+  <div
+    className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ${offset}`}
+    style={{ backgroundColor: 'white', position: 'relative' }}
+  >
     <div className="flex items-start gap-4">
       <img 
         src={image} 
@@ -17,12 +20,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, of
         className="w-12 h-12 rounded-full object-cover flex-shrink-0"
       />
       <div className="flex-1">
-        <h4 className="text-lg font-medium mb-2" style={{ color: 'var(--color-secondary)' }}>{name}</h4>
-        <p className="leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>{text}</p>
+        <h4 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-secondary)' }}>{name}</h4>
+        <p style={{ color: 'var(--color-text-muted)' }}>{text}</p>
       </div>
     </div>
-    {/* Quote marks */}
-    <div className="absolute -top-2 -right-2 text-4xl text-teal-400/20">"</div>
+    <div className="absolute -top-2 -right-2 text-4xl" style={{ color: 'var(--color-secondary)', opacity: 0.2 }}>"</div>
   </div>
 );
 
@@ -46,56 +48,54 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-dark)' }}>
+    <section
+      className="py-20 relative overflow-hidden"
+      style={{ backgroundColor: 'var(--color-background-dark)' }}
+    >
       
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Content */}
-          <div className="lg:pr-8 relative">
-            <h2 className="text-4xl lg:text-5xl font-light mb-6 leading-tight" style={{ color: 'var(--color-secondary)' }}>
-              What Our<br />
-              Customers Says
+          <div className="lg:pr-8">
+            <h2
+              className="text-5xl lg:text-6xl font-light mb-6 leading-tight"
+              style={{ color: 'var(--color-secondary)' }}
+            >
+              What Our<br /> Customers Says
             </h2>
-            <p className="text-lg mb-12 leading-relaxed max-w-md" style={{ color: 'var(--color-text-muted)' }}>
+            <p
+              className="text-lg mb-8 leading-relaxed max-w-md"
+              style={{ color: 'var(--color-text-muted)' }}
+            >
               Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common.
             </p>
-            <div className="absolute bottom-0 left-0">
-              <img 
-                src="/assets/logo-orange.png" 
-                alt="Autono Logo" 
-                className="w-48 opacity-80 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
           </div>
 
           {/* Right Testimonials */}
           <div className="relative">
             <div className="space-y-8">
-              <TestimonialCard 
-                {...testimonials[0]} 
-                offset="ml-0"
-              />
-              <TestimonialCard 
-                {...testimonials[1]} 
-                offset="ml-8"
-              />
-              <TestimonialCard 
-                {...testimonials[2]} 
-                offset="ml-4"
-              />
+              <TestimonialCard {...testimonials[0]} offset="ml-0" />
+              <TestimonialCard {...testimonials[1]} offset="ml-8" />
+              <TestimonialCard {...testimonials[2]} offset="ml-4" />
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-teal-400/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-40 h-40 bg-purple-400/10 rounded-full blur-3xl"></div>
-    </section>
+      {/* Logo at bottom-left */}
+      <div className="absolute -bottom-20 -left-20 z-10">
+        <img 
+          src="/assets/logo-orange.png" 
+          alt="Autono Logo" 
+          className="w-[300px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
+        />
+      </div>
+
+   </section>
   );
 };
 
 export default Testimonials;
+ 
