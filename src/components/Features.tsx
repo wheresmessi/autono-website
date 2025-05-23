@@ -25,19 +25,19 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => {
 
   return (
     <div 
-      className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+      className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
       style={{ 
         backgroundColor: 'var(--color-primary)',
         border: '1px solid var(--color-border)'
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <h3 
-        className="text-2xl font-semibold mb-4 transition-colors duration-300 cursor-pointer"
+        className="text-2xl font-semibold mb-4 transition-colors duration-300"
         style={{ 
           color: isHovered ? '#EA762C' : 'var(--color-secondary)'
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {title}
       </h3>
