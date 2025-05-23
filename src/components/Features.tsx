@@ -20,28 +20,36 @@ interface OfferingCardProps {
   description: string;
 }
 
-const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => (
-  <div 
-    className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-    style={{ 
-      backgroundColor: 'var(--color-primary)',
-      border: '1px solid var(--color-border)'
-    }}
-  >
-    <h3 
-      className="text-2xl font-semibold mb-4 transition-colors duration-300 hover:text-[#EA762C]"
-      style={{ color: 'var(--color-secondary)' }}
+const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  return (
+    <div 
+      className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+      style={{ 
+        backgroundColor: 'var(--color-primary)',
+        border: '1px solid var(--color-border)'
+      }}
     >
-      {title}
-    </h3>
-    <p 
-      className="leading-relaxed"
-      style={{ color: 'var(--color-text-muted)' }}
-    >
-      {description}
-    </p>
-  </div>
-);
+      <h3 
+        className="text-2xl font-semibold mb-4 transition-colors duration-300 cursor-pointer"
+        style={{ 
+          color: isHovered ? '#EA762C' : 'var(--color-secondary)'
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {title}
+      </h3>
+      <p 
+        className="leading-relaxed"
+        style={{ color: 'var(--color-text-muted)' }}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
 
 const ClientLogos: React.FC = () => {
   const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png";
