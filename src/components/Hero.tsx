@@ -26,9 +26,9 @@ const Hero: React.FC = () => {
       
       {/* Gradient overlay */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-32" 
+        className="absolute bottom-0 left-0 right-0 h-64" 
         style={{ 
-          background: 'linear-gradient(to top, var(--color-background-dark), transparent)'
+          background: 'linear-gradient(to top, var(--color-background-dark) 20%, transparent)'
         }}
       ></div>
       
@@ -44,20 +44,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg 
-          className="w-8 h-8"
-          style={{ color: 'var(--color-background-secondary)' }}
-          fill="none" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth="2" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </div>
     </div>
   );
 };
