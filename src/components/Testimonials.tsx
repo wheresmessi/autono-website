@@ -10,7 +10,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, offset = '' }) => (
   <div
-    className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2 ${offset}`}
+    className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2 hover:scale-105 ${offset}`}
     style={{ backgroundColor: 'white', position: 'relative' }}
   >
     <div className="flex items-start gap-4">
