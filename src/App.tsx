@@ -1,18 +1,18 @@
-
+import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import './styles/colors.css';
 
 function App() {
   return (
-    <div className="relative">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--color-background-dark)' }}>
       <Header />
-      <main>
-        <Hero />
-        <Features />
-      </main>
+      <Hero />
+      <Features />
+      <Testimonials />
       <Footer />
     </div>
   );
