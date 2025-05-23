@@ -47,15 +47,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-20 relative overflow-hidden" style={{ backgroundColor: 'var(--color-background-dark)' }}>
-      {/* Decorative star element */}
-      <div className="absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <svg width="60" height="60" viewBox="0 0 60 60" className="text-yellow-400">
-          <path 
-            d="M30 0l7.5 22.5H60L37.5 37.5l7.5 22.5L30 45 15 60l7.5-22.5L0 22.5h22.5L30 0z" 
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+      
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -66,18 +58,16 @@ const Testimonials: React.FC = () => {
               What Our<br />
               Customers Says
             </h2>
-            <p className="text-lg mb-8 leading-relaxed max-w-md" style={{ color: 'var(--color-text-muted)' }}>
+            <p className="text-lg mb-12 leading-relaxed max-w-md" style={{ color: 'var(--color-text-muted)' }}>
               Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common.
             </p>
-            <button 
-              className="px-8 py-4 rounded-full font-medium transition-all duration-200 hover:opacity-90"
-              style={{ 
-                backgroundColor: 'var(--color-button-primary)',
-                color: 'var(--color-button-primary-text)'
-              }}
-            >
-              View More
-            </button>
+            <div className="mt-16">
+              <img 
+                src="/assets/logo-orange.png" 
+                alt="Autono Logo" 
+                className="w-32 opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
           </div>
 
           {/* Right Testimonials */}
