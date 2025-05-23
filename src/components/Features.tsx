@@ -28,18 +28,11 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => (
       border: '1px solid var(--color-border)'
     }}
   >
-    <h3 className="text-2xl font-semibold mb-4">
-      <div className="relative inline-block overflow-hidden group">
-        <span 
-          className="relative z-10 group-hover:text-white transition-colors duration-300"
-          style={{ color: 'var(--color-secondary)' }}
-        >
-          {title}
-        </span>
-        <div 
-          className="absolute inset-0 bg-[#EA762C] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
-        />
-      </div>
+    <h3 
+      className="text-2xl font-semibold mb-4 transition-colors duration-300 hover:text-[#EA762C]"
+      style={{ color: 'var(--color-secondary)' }}
+    >
+      {title}
     </h3>
     <p 
       className="leading-relaxed"
