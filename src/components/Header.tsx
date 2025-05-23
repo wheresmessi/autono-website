@@ -56,11 +56,11 @@ const Header: React.FC = () => {
 
             {/* Contact Button */}
             <button 
-              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-all duration-300 border-2 hover:bg-teal-400 hover:border-teal-400 hover:text-white"
+              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-all duration-300 border-2 hover:bg-teal-400 hover:text-white"
               style={{ 
-                backgroundColor: 'transparent',
-                color: 'black',
-                borderColor: 'black'
+                backgroundColor: 'white',
+                color: '#2DD4BF',
+                borderColor: '#2DD4BF'
               }}
             >
               Contact Us
