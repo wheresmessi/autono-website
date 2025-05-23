@@ -110,7 +110,7 @@ const VisionSection: React.FC = () => {
 
             <div className="relative">
               <img
-                src="/src/assets/Capture.PNG"
+                src="/assets/Capture.PNG"
                 alt="Autono Concept Car"
                 className="w-full h-auto object-cover rounded-lg"
               />

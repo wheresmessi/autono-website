@@ -56,143 +56,150 @@ const VehicleShowcase: React.FC = () => {
   );
 
   return (
-    <section style={{ backgroundColor: 'var(--color-background-primary)' }}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-24">
-        <div className="space-y-8">
-          {/* Services Content */}
-          <TextContainer>
-            <div className="space-y-4">
-              <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
-                SERVICES
-              </h3>
+    <>
+      {/* First Section */}
+      <section className="py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <img
+                src="/assets/capture-2.PNG"
+                alt="Autono Vehicle"
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
+            
+            <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
-                We Deliver Exceptional<br />
-                Products and Services<br />
-                Around the World
+                AUTONOMOUS<br />
+                DRIVING
               </h2>
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                Experience the future of mobility with our advanced autonomous driving technology. 
+                Our vehicles are equipped with state-of-the-art sensors and AI systems that ensure 
+                a safe and comfortable journey every time.
+              </p>
+              <button className="inline-flex items-center space-x-2 px-6 py-2 rounded-full transition-colors duration-300"
+                      style={{ 
+                        color: 'var(--color-button-secondary-text)',
+                        borderColor: 'var(--color-border-primary)',
+                        borderWidth: '1px',
+                        '--hover-bg': 'var(--color-button-primary)',
+                        '--hover-text': 'var(--color-button-primary-text)'
+                      } as React.CSSProperties}>
+                <span>Read More</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
             </div>
-          </TextContainer>
-
-          {/* Autonomous Driving Sections */}
-          {[1, 2, 3].map((index) => (
-            <div key={index} className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mt-20">
-              {index % 2 === 0 && (
-                <div className="relative">
-                  <img
-                    src="/src/assets/capture-2.PNG"
-                    alt="Autonomous Vehicle"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              )}
-              
-                <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
-                    AUTONOMOUS<br />
-                    DRIVING
-                  </h2>
-                  <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-                    Experience the future of mobility with our advanced autonomous driving technology. 
-                    Our vehicles are equipped with state-of-the-art sensors and AI systems that ensure 
-                    a safe and comfortable journey every time.
-                  </p>
-                  <button className="inline-flex items-center space-x-2 px-6 py-2 rounded-full transition-colors duration-300"
-                          style={{ 
-                            color: 'var(--color-button-secondary-text)',
-                            borderColor: 'var(--color-border-primary)',
-                            borderWidth: '1px',
-                            '--hover-bg': 'var(--color-button-primary)',
-                            '--hover-text': 'var(--color-button-primary-text)'
-                          } as React.CSSProperties}>
-                    <span>Read More</span>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                </div>
-              
-              {index % 2 !== 0 && (
-                <div className="relative">
-                  <img
-                    src="/src/assets/capture-2.PNG"
-                    alt="Autonomous Vehicle"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Manufacturing Approach Section */}
-      <div className="relative h-[600px]">
-        <img
-          src="/src/assets/why-us.avif"
-          alt="Manufacturing Robots"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl h-full flex items-center">
-          <div className="max-w-md p-12 rounded-2xl flex backdrop-blur-sm"
-               style={{ backgroundColor: 'var(--color-overlay-dark)' }}>
-            <div className="w-0.5 mr-8 self-stretch" style={{ backgroundColor: '#EA762C', width: '2px' }}></div>
-            
-              <div>
-                <h3 className="uppercase tracking-wider font-light mb-6" style={{ color: 'var(--color-text-muted)' }}>
-                  WHY AUTONO
-                </h3>
-                <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-6" style={{ color: 'var(--color-secondary)' }}>
-                  A different approach,<br />
-                  using a new method of<br />
-                  manufacturing.
-                </h2>
-                <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--color-text-muted)' }}>
-                  I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font.
-                </p>
-                <button className="inline-flex items-center space-x-2 group" style={{ color: 'var(--color-secondary)' }}>
-                  <span>Read More</span>
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Numbers Section */}
-      <div className="relative h-[600px]">
-        <div className="absolute left-0 w-1/2 h-full">
-          <img
-            src="/src/assets/robo-arm.avif"
-            alt="Robot Arm"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center h-full">
-            <div></div>
+      {/* Second Section */}
+      <section className="py-24" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative order-2 lg:order-1">
+              <img
+                src="/assets/capture-2.PNG"
+                alt="Autono Vehicle Interior"
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
             
-              <div className="space-y-8">
-                <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
-                  Autono In Numbers
-                </h2>
-                <div className="grid grid-cols-2 gap-12">
-                  {[
-                    { value: "200", label: "Employees" },
-                    { value: "5", label: "Core Teams" },
-                    { value: "200M$", label: "Capital" },
-                    { value: "326", label: "Partners" }
-                  ].map((item, index) => (
-                    <div key={index} className="space-y-2">
-                      <p className="text-4xl font-light" style={{ color: 'var(--color-heading-primary)' }}>{item.value}</p>
-                      <p className="text-sm uppercase tracking-wider" style={{ color: 'var(--color-text-muted)' }}>{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
+                AUTONOMOUS<br />
+                DRIVING
+              </h2>
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                Experience the future of mobility with our advanced autonomous driving technology. 
+                Our vehicles are equipped with state-of-the-art sensors and AI systems that ensure 
+                a safe and comfortable journey every time.
+              </p>
+              <button className="inline-flex items-center space-x-2 px-6 py-2 rounded-full transition-colors duration-300"
+                      style={{ 
+                        color: 'var(--color-button-secondary-text)',
+                        borderColor: 'var(--color-border-primary)',
+                        borderWidth: '1px',
+                        '--hover-bg': 'var(--color-button-primary)',
+                        '--hover-text': 'var(--color-button-primary-text)'
+                      } as React.CSSProperties}>
+                <span>Read More</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <img
+                src="/assets/why-us.avif"
+                alt="Why Choose Autono"
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
+            
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
+                WHY AUTONO
+              </h2>
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                A different approach,<br />
+                using a new method of<br />
+                manufacturing.
+              </p>
+              <button className="inline-flex items-center space-x-2 group" style={{ color: 'var(--color-secondary)' }}>
+                <span>Read More</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Innovation Section */}
+      <section className="py-24" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative order-2 lg:order-1">
+              <img
+                src="/assets/robo-arm.avif"
+                alt="Innovation at Autono"
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
+            
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-heading-primary)' }}>
+                Autono In Numbers
+              </h2>
+              <div className="grid grid-cols-2 gap-12">
+                {[
+                  { value: "200", label: "Employees" },
+                  { value: "5", label: "Core Teams" },
+                  { value: "200M$", label: "Capital" },
+                  { value: "326", label: "Partners" }
+                ].map((item, index) => (
+                  <div key={index} className="space-y-2">
+                    <p className="text-4xl font-light" style={{ color: 'var(--color-heading-primary)' }}>{item.value}</p>
+                    <p className="text-sm uppercase tracking-wider" style={{ color: 'var(--color-text-muted)' }}>{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Careers Section */}
       <div className="py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
@@ -301,7 +308,7 @@ const VehicleShowcase: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

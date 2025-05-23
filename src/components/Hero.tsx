@@ -16,9 +16,8 @@ const Hero: React.FC = () => {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ transform: 'scaleY(-1)' }}
       >
-        <source src="/src/assets/bg.mp4" type="video/mp4" />
+        <source src="/assets/bg.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}

@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-3">
             <div className="mb-12">
               <img 
-                src="/src/assets/image.png" 
+                src="/assets/image.png" 
                 alt="Autono Logo" 
                 className="h-8 w-auto"
               />

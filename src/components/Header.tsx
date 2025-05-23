@@ -26,10 +26,10 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <img 
-              src="/src/assets/image.png" 
-              alt="Autono Logo" 
+          <div className="flex-shrink-0">
+            <img
+              src="/assets/image.png"
+              alt="Autono Logo"
               className="h-8 w-auto"
             />
           </div>
