@@ -56,7 +56,7 @@ const Header: React.FC = () => {
 
             {/* Contact Button */}
             <button 
-              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-all duration-300 bg-white text-teal-400 hover:bg-teal-400 hover:text-white"
+              className="hidden md:inline-flex items-center px-6 py-2 rounded-full transition-all duration-300 bg-white text-black hover:bg-teal-400 hover:text-white"
             >
               Contact Us
             </button>

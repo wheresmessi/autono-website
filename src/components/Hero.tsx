@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover blur-sm"
+        className="absolute inset-0 w-full h-full object-cover"
         style={{ transform: 'scaleY(-1)' }}
       >
         <source src="/assets/bg.mp4" type="video/mp4" />
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       <div 
         className="absolute bottom-0 left-0 right-0 h-64" 
         style={{ 
-          background: 'linear-gradient(to top, var(--color-background-dark) 20%, transparent)'
+          background: 'linear-gradient(to top, var(--color-background-dark), transparent)'
         }}
       ></div>
       

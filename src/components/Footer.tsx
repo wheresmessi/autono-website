@@ -86,12 +86,6 @@ const Footer: React.FC = () => {
 
         {/* Footer Bottom */}
         <div className="mt-20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-            © 2035 by Autono. Powered and secured by{' '}
-            <a href="#" className="underline">
-              Wix
-            </a>
-          </p>
           <div className="flex space-x-6">
             {[Linkedin, Facebook, Twitter, Instagram].map((Icon, index) => (
               <a 
