@@ -34,11 +34,11 @@ const Hero: React.FC = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto -mt-40">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal"
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-bold"
               style={{ color: 'var(--color-background-secondary)' }}>
             Transform today<br />Thrive tomorrow
           </h1>
-          <p className="text-xl md:text-2xl mb-10 font-medium"
+          <p className="text-xl md:text-2xl mb-10 font-semibold"
              style={{ color: 'var(--color-background-secondary)' }}>
             Revolutionising how construction, logistics and warehouse companies work</p>
         </div>
