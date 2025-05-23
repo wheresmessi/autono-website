@@ -53,7 +53,7 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Content */}
-          <div className="lg:pr-8">
+          <div className="lg:pr-8 relative">
             <h2 className="text-4xl lg:text-5xl font-light mb-6 leading-tight" style={{ color: 'var(--color-secondary)' }}>
               What Our<br />
               Customers Says
@@ -61,11 +61,11 @@ const Testimonials: React.FC = () => {
             <p className="text-lg mb-12 leading-relaxed max-w-md" style={{ color: 'var(--color-text-muted)' }}>
               Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common.
             </p>
-            <div className="mt-16">
+            <div className="absolute bottom-0 left-0">
               <img 
                 src="/assets/logo-orange.png" 
                 alt="Autono Logo" 
-                className="w-32 opacity-80 hover:opacity-100 transition-opacity duration-300"
+                className="w-48 opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           </div>
