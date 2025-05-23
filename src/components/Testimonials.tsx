@@ -76,9 +76,9 @@ const Testimonials: React.FC = () => {
           {/* Right Testimonials */}
           <div className="relative">
             <div className="space-y-8">
-              <TestimonialCard {...testimonials[0]} offset="ml-0" />
-              <TestimonialCard {...testimonials[1]} offset="ml-16" />
-              <TestimonialCard {...testimonials[2]} offset="ml-4" />
+              <TestimonialCard {...testimonials[0]} offset="ml-16" />
+              <TestimonialCard {...testimonials[1]} offset="ml-4" />
+              <TestimonialCard {...testimonials[2]} offset="ml-16" />
             </div>
           </div>
         </div>
