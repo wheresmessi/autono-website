@@ -4,7 +4,7 @@ import '../styles/colors.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer style={{ backgroundColor: 'var(--color-background-primary)' }} className="py-20">
+    <footer style={{ backgroundColor: 'var(--color-background-secondary)' }} className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Logo and Navigation Links */}
