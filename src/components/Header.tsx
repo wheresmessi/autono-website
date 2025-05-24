@@ -5,6 +5,7 @@ import '../styles/colors.css';
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -35,6 +36,25 @@ const Header: React.FC = () => {
       setIsMobileMenuOpen(false);
     }
   };
+
+  const handleProductsClick = () => {
+    setIsProductsOpen(!isProductsOpen);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.products-dropdown')) {
+        setIsProductsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header 
@@ -74,13 +94,47 @@ const Header: React.FC = () => {
               transition-all duration-300
               w-full md:w-auto
             `}>
-              <Link 
-                to="/products" 
-                className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Products
-              </Link>
+              {/* Products Dropdown */}
+              <div className="relative products-dropdown w-full md:w-auto">
+                <button 
+                  onClick={handleProductsClick}
+                  className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto text-left"
+                >
+                  Products
+                </button>
+                
+                {/* Dropdown Menu */}
+                <div 
+                  className={`
+                    ${isProductsOpen ? 'block' : 'hidden'}
+                    md:absolute md:left-0 md:mt-2 md:w-48
+                    md:bg-white md:rounded-lg md:shadow-lg
+                    bg-[var(--color-primary)]/80 md:bg-white
+                    rounded-lg
+                    mt-2
+                    w-full
+                    border border-white/10 md:border-gray-200
+                  `}
+                >
+                  <Link 
+                    to="/products" 
+                    className="block px-4 py-2 text-sm text-white md:text-[var(--color-primary)] hover:bg-[var(--color-primary-light)] hover:text-white md:rounded-t-lg transition-colors duration-200"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsProductsOpen(false);
+                    }}
+                  >
+                    Conforce
+                  </Link>
+                  <div className="block px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200">
+                    Transforce
+                  </div>
+                  <div className="block px-4 py-2 text-sm text-gray-400/60 cursor-not-allowed border-t border-white/10 md:border-gray-200 md:rounded-b-lg">
+                    Wareforce
+                  </div>
+                </div>
+              </div>
+
               <button 
                 onClick={scrollToAbout}
                 className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto text-left"
@@ -106,7 +160,10 @@ const Header: React.FC = () => {
             <button 
               className="md:hidden" 
               style={{ color: 'white' }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+                setIsProductsOpen(false);
+              }}
             >
               <svg 
                 className="w-6 h-6" 
