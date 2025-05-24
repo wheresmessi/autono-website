@@ -73,7 +73,7 @@ const Header: React.FC = () => {
             <img
               src="/assets/image.png"
               alt="Autono Logo"
-              className="h-8 w-auto"
+              className="h-12 w-auto sm:h-12"
             />
           </Link>
 
@@ -122,6 +122,7 @@ const Header: React.FC = () => {
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsProductsOpen(false);
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Conforce

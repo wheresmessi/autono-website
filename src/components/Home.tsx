@@ -1,19 +1,22 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef} from 'react';
 import '../styles/colors.css';
 import '../styles/carousel.css';
 import TextContainer from './shared/TextContainer';
+import { Link } from 'react-router-dom';
 
 interface OfferingCardProps {
   title: string;
   description: string;
+  isClickable?: boolean;
+  isComingSoon?: boolean;
 }
 
-const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => {
+const OfferingCard: React.FC<OfferingCardProps> = ({ title, description, isClickable = true, isComingSoon = false }) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <div 
-      className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+      className="p-8 rounded-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer flex flex-col h-full relative overflow-hidden"
       style={{ 
         backgroundColor: 'var(--color-primary)',
         border: '1px solid var(--color-border)'
@@ -21,6 +24,14 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {isComingSoon && (
+        <div 
+          className="absolute top-4 right-4 text-white text-sm font-medium px-3 py-1 rounded-full"
+          style={{ backgroundColor: '#F99934' }}
+        >
+          Coming Soon
+        </div>
+      )}
       <h3 
         className="text-2xl font-semibold mb-4 transition-colors duration-300"
         style={{ 
@@ -30,11 +41,27 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description }) => {
         {title}
       </h3>
       <p 
-        className="leading-relaxed"
+        className="leading-relaxed flex-grow mb-6"
         style={{ color: 'var(--color-text-muted)' }}
       >
         {description}
       </p>
+      {isClickable ? (
+        <Link 
+          to="/products"
+          className="inline-block bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium py-2 px-6 rounded-lg transition-all duration-300 hover:-translate-y-1 text-center"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          Learn More
+        </Link>
+      ) : (
+        <button 
+          disabled
+          className="inline-block bg-[var(--color-button-primary)] text-[var(--color-text-primary)] font-medium py-2 px-6 rounded-lg opacity-50 cursor-not-allowed"
+        >
+          Learn More
+        </button>
+      )}
     </div>
   );
 };
@@ -94,16 +121,19 @@ const Home: React.FC = () => {
 
   const offerings = [
     {
-      title: "Autonomous Fleet Management",
-      description: "Enterprise-grade solutions for managing autonomous vehicle fleets with real-time monitoring, predictive maintenance, and optimization algorithms."
+      title: "Conforce",
+      description: "Enterprise-grade solutions for managing construction projects with real-time monitoring, predictive maintenance, and optimization algorithms.",
+      isComingSoon: false
     },
     {
-      title: "Smart City Integration",
-      description: "Seamless integration with smart city infrastructure, enabling efficient traffic flow, reduced congestion, and enhanced urban mobility."
+      title: "Transforce",
+      description: "Revolutionary transportation and logistics management system for optimizing fleet operations and delivery networks.",
+      isComingSoon: true
     },
     {
-      title: "Personal Transport Solutions",
-      description: "Revolutionary personal vehicles equipped with our advanced autonomous technology, offering unparalleled safety and comfort."
+      title: "Wareforce",
+      description: "Advanced warehouse management system for inventory control, order fulfillment, and supply chain optimization.",
+      isComingSoon: true
     }
   ];
 
@@ -230,6 +260,8 @@ const Home: React.FC = () => {
                 key={index}
                 title={offering.title}
                 description={offering.description}
+                isClickable={!offering.isComingSoon}
+                isComingSoon={offering.isComingSoon}
               />
             ))}
           </div>
