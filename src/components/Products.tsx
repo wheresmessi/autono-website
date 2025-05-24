@@ -110,33 +110,33 @@ const Products = () => {
   ];
 
   return (
-    <div className="bg-[#1F1F1F] text-[#EEEEEE]">
+    <div style={{ backgroundColor: 'var(--color-background-dark)' }}>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#3C3C3C] via-[#1F1F1F] to-[#3C3C3C] min-h-screen flex items-center">
+      <section className="bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-primary)] min-h-screen flex items-center">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-[#EEEEEE] animate-fadeInUp">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal"
+              style={{ color: 'var(--color-background-secondary)' }}>
             The Smart Force Behind Every Construction Project
           </h2>
-          <p className="text-xl md:text-2xl mb-10 font-medium text-[#99CCD9] animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+          <p className="text-xl md:text-2xl mb-10 font-medium" style={{ color: 'var(--color-primary-light)' }}>
             Supporting You with Powerful, Intelligent Project Management Solutions
           </p>
-          <button className="relative bg-[#4B8898] hover:bg-[#99CCD9] text-[#1F1F1F] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-[0_0_20px_5px_rgba(75,136,152,0.6)] hover:shadow-[#4B8898]/60">
-            <span className="relative z-10">Book a Call</span>
-            <span className="absolute inset-0 rounded-lg bg-[#4B8898] blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <button className="relative bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            <span className="relative z-10">Book a Demo</span>
           </button>
         </div>
       </section>
 
       {/* Why Choose Conforce Section */}
-      <section className="min-h-screen py-20">
+      <section className="min-h-screen py-20" style={{ backgroundColor: 'var(--color-background-dark)' }}>
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
           <TextContainer>
             <div className="space-y-8">
               <div className="space-y-4">
-                <h3 className="uppercase tracking-wider font-normal" style={{ color: 'var(--color-text-muted)' }}>
+                <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
                   WHY CHOOSE CONFORCE
                 </h3>
-                <h2 className="text-4xl lg:text-5xl font-normal leading-tight">
+                <h2 className="text-4xl lg:text-5xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
                   Trusted by Leading<br />Construction Firms<br />Worldwide
                 </h2>
               </div>
@@ -155,20 +155,20 @@ const Products = () => {
                   </li>
                 ))}
               </ul>
-              <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[var(--color-text-muted)] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1">
+              <button className="bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1">
                 Get Started
               </button>
             </div>
           </TextContainer>
           <div className="bg-[var(--color-primary)]/5 rounded-2xl p-8 border border-[var(--color-primary)]/30 shadow-2xl backdrop-blur-sm">
             <div className="space-y-6">
-              <div className="text-5xl font-bold">15+</div>
-              <h3 className="text-2xl font-semibold">Years of Excellence</h3>
+              <div className="text-5xl font-bold" style={{ color: 'var(--color-secondary)' }}>15+</div>
+              <h3 className="text-2xl font-semibold" style={{ color: 'var(--color-text-muted)' }}>Years of Excellence</h3>
               <p style={{ color: 'var(--color-text-muted)' }}>Delivering cutting-edge construction solutions worldwide</p>
               <div className="pt-6 space-y-4 border-t border-[var(--color-primary)]/30">
                 {stats.map((item, i) => (
                   <div key={i} className="flex justify-between">
-                    <span>{item.label}:</span>
+                    <span style={{ color: 'var(--color-text-muted)' }}>{item.label}:</span>
                     <span style={{ color: 'var(--color-text-muted)' }} className="font-medium">{item.value}</span>
                   </div>
                 ))}
@@ -179,14 +179,17 @@ const Products = () => {
       </section>
 
       {/* Our Solutions Section */}
-      <section className="min-h-screen bg-gradient-to-b from-[#3C3C3C] to-[#1F1F1F] py-32 relative overflow-hidden flex items-center justify-center">
+      <section className="min-h-screen py-32 relative overflow-hidden flex items-center justify-center" 
+               style={{ backgroundColor: 'var(--color-background-secondary)' }}>
         <div className="w-full max-w-6xl mx-auto px-4 relative" style={{ height: '900px' }}>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-2xl z-10 px-4">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-[#EEEEEE] mb-4">Our Solutions</h2>
-            <p className="text-lg md:text-xl text-[#99CCD9] mb-8">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal mb-4" style={{ color: 'var(--color-secondary)' }}>
+              Our Solutions
+            </h2>
+            <p className="text-lg md:text-xl mb-8" style={{ color: 'var(--color-text-muted2)' }}>
               Comprehensive tools that revolve around your construction needs
             </p>
-            <button className="bg-gradient-to-r from-[#4B8898] to-[#3A6A7A] hover:from-[#5BA8B8] hover:to-[#4B8898] text-[#EEEEEE] font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#4B8898]/30 z-20 relative">
+            <button className="bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg z-20 relative">
               Explore Solutions
               <svg className="h-5 w-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -289,11 +292,15 @@ const Products = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-gradient-to-b from-[#1F1F1F] to-[#3C3C3C] relative overflow-hidden">
+      <section className="py-20" style={{ backgroundColor: 'var(--color-background-dark)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-normal text-[#EEEEEE] mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-[#99CCD9] max-w-2xl mx-auto">Choose the perfect plan for your construction business needs</p>
+            <h2 className="text-4xl md:text-5xl font-normal mb-4" style={{ color: 'var(--color-secondary)' }}>
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-xl" style={{ color: 'var(--color-text-muted2)' }}>
+              Choose the perfect plan for your construction business needs
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
