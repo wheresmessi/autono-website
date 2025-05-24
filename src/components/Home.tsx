@@ -319,17 +319,17 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute -bottom-20 -left-20 z-10">
+        <div className="absolute -bottom-20 -left-10 z-10">
           <img 
-            src="/assets/logo-orange.png" 
+            src="/assets/snowforce-orange.png" 
             alt="Autono Logo" 
-            className="w-[350px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
+            className="w-[450px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
           />
         </div>
       </section>
 
       {/* Contact Us Section */}
-      <section className="py-20" style={{ backgroundColor: '#E0E0E0' }}>
+      <section id="contact" className="py-20" style={{ backgroundColor: '#E0E0E0' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
