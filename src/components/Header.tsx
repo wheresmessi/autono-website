@@ -17,10 +17,14 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToFooter = () => {
-    const footer = document.querySelector('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
+  const scrollToContact = () => {
+    if (location.pathname !== '/') {
+      window.location.href = '/#contact';
+      return;
+    }
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
     }
   };
@@ -146,7 +150,7 @@ const Header: React.FC = () => {
 
             {/* Contact Button */}
             <button 
-              onClick={scrollToFooter}
+              onClick={scrollToContact}
               className={`
                 items-center px-6 py-2 rounded-full 
                 transition-all duration-300 
