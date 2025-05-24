@@ -295,6 +295,131 @@ const Home: React.FC = () => {
           />
         </div>
       </section>
+
+      {/* Contact Us Section */}
+      <section className="py-20" style={{ backgroundColor: '#E0E0E0' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
+            <div className="bg-[var(--color-primary)] p-8 rounded-xl shadow-xl">
+              <h3 className="uppercase tracking-wider font-light mb-2" style={{ color: 'var(--color-text-muted)' }}>
+                Contact Us
+              </h3>
+              <h2 className="text-4xl font-normal mb-8" style={{ color: 'var(--color-text-muted)' }}>
+                Get In Touch
+              </h2>
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm mb-2" style={{ color: 'var(--color-text-muted)' }}>Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="Your Name..." 
+                    className="w-full p-3 rounded-lg bg-[var(--color-primary)]/80 border border-[var(--color-text-muted)]/20 focus:outline-none focus:border-[var(--color-text-muted)]"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-2" style={{ color: 'var(--color-text-muted)' }}>Email</label>
+                  <input 
+                    type="email" 
+                    placeholder="example@yourmail.com" 
+                    className="w-full p-3 rounded-lg bg-[var(--color-primary)]/80 border border-[var(--color-text-muted)]/20 focus:outline-none focus:border-[var(--color-text-muted)]"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-2" style={{ color: 'var(--color-text-muted)' }}>Subject</label>
+                  <input 
+                    type="text" 
+                    placeholder="Title..." 
+                    className="w-full p-3 rounded-lg bg-[var(--color-primary)]/80 border border-[var(--color-text-muted)]/20 focus:outline-none focus:border-[var(--color-text-muted)]"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-2" style={{ color: 'var(--color-text-muted)' }}>Message</label>
+                  <textarea 
+                    placeholder="Type Here..." 
+                    rows={6}
+                    className="w-full p-3 rounded-lg bg-[var(--color-primary)]/80 border border-[var(--color-text-muted)]/20 focus:outline-none focus:border-[var(--color-text-muted)]"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  />
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full bg-[var(--color-text-muted)] hover:bg-[var(--color-text-muted)]/90 text-[var(--color-primary)] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1"
+                >
+                  Send Now
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-12">
+              <div>
+                <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                  Ready to transform your construction operations? Get in touch with our team of experts who are ready to help you implement the perfect solution for your business.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex items-center space-x-4">
+                  <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-medium text-[var(--color-secondary)]">Phone Number</h4>
+                    <p className="text-[var(--color-text-secondary)]">+6282 4032 567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-medium text-[var(--color-secondary)]">Email Address</h4>
+                    <p className="text-[var(--color-text-secondary)]">contact@conforce.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-medium text-[var(--color-secondary)]">Our Office</h4>
+                    <p className="text-[var(--color-text-secondary)]">2443 Oak Ridge, Omaha, QA 45065</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <svg className="w-8 h-8 text-[var(--color-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-medium text-[var(--color-secondary)]">WhatsApp</h4>
+                    <p className="text-[var(--color-text-secondary)]">082-245-7253</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="rounded-xl overflow-hidden border border-[var(--color-primary)]/20">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7663120690635!2d-73.9852776!3d40.7484445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMCc0NC40IkwgNzPCsDU5JzA3LjAiVw!5e0!3m2!1sen!2sus!4v1621523356679!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
