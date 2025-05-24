@@ -319,11 +319,11 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute -bottom-20 -left-20 z-10">
+        <div className="absolute -bottom-20 -left-10 z-10">
           <img 
             src="/assets/snowforce-orange.png" 
             alt="Autono Logo" 
-            className="w-[350px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
+            className="w-[450px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
           />
         </div>
       </section>
