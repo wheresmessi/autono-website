@@ -114,8 +114,8 @@ const Products = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#3C3C3C] via-[#1F1F1F] to-[#3C3C3C] min-h-screen flex items-center">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-[#EEEEEE] animate-fadeInUp">
-            The Smart Force Behind Every Construction Project
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-[#EEEEEE] animate-fadeInUp uppercase">
+            THE SMART FORCE BEHIND EVERY CONSTRUCTION PROJECT
           </h2>
           <p className="text-xl md:text-2xl mb-10 font-medium text-[#99CCD9] animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
             Supporting You with Powerful, Intelligent Project Management Solutions
