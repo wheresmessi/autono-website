@@ -133,10 +133,10 @@ const Products = () => {
           <TextContainer>
             <div className="space-y-8">
               <div className="space-y-4">
-                <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
+                <h3 className="uppercase tracking-wider font-normal" style={{ color: 'var(--color-text-muted)' }}>
                   WHY CHOOSE CONFORCE
                 </h3>
-                <h2 className="text-4xl lg:text-5xl font-light leading-tight">
+                <h2 className="text-4xl lg:text-5xl font-normal leading-tight">
                   Trusted by Leading<br />Construction Firms<br />Worldwide
                 </h2>
               </div>
@@ -182,7 +182,7 @@ const Products = () => {
       <section className="min-h-screen bg-gradient-to-b from-[#3C3C3C] to-[#1F1F1F] py-32 relative overflow-hidden flex items-center justify-center">
         <div className="w-full max-w-6xl mx-auto px-4 relative" style={{ height: '900px' }}>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-2xl z-10 px-4">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#EEEEEE] mb-4">Our Solutions</h2>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal text-[#EEEEEE] mb-4">Our Solutions</h2>
             <p className="text-lg md:text-xl text-[#99CCD9] mb-8">
               Comprehensive tools that revolve around your construction needs
             </p>
@@ -292,7 +292,7 @@ const Products = () => {
       <section className="py-20 bg-gradient-to-b from-[#1F1F1F] to-[#3C3C3C] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#EEEEEE] mb-4">Simple, Transparent Pricing</h2>
+            <h2 className="text-4xl md:text-5xl font-normal text-[#EEEEEE] mb-4">Simple, Transparent Pricing</h2>
             <p className="text-xl text-[#99CCD9] max-w-2xl mx-auto">Choose the perfect plan for your construction business needs</p>
           </div>
           
@@ -300,7 +300,7 @@ const Products = () => {
             {/* Basic Plan */}
             <div className="bg-[#2A2A2A] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#4B8898]/20">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#EEEEEE] mb-2">Basic</h3>
+                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Basic</h3>
                 <p className="text-[#99CCD9] mb-6">Perfect for small projects</p>
                 <div className="mb-8">
                   <span className="text-5xl font-bold text-[#EEEEEE]">₹7,999</span>
@@ -338,7 +338,7 @@ const Products = () => {
                 POPULAR
               </div>
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#EEEEEE] mb-2">Professional</h3>
+                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Professional</h3>
                 <p className="text-[#D1E7EC] mb-6">Ideal for growing teams</p>
                 <div className="mb-8">
                   <span className="text-5xl font-bold text-[#EEEEEE]">₹24,999</span>
@@ -385,7 +385,7 @@ const Products = () => {
             {/* Enterprise Plan */}
             <div className="bg-[#2A2A2A] rounded-xl p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#4B8898]/20">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-[#EEEEEE] mb-2">Enterprise</h3>
+                <h3 className="text-2xl font-normal text-[#EEEEEE] mb-2">Enterprise</h3>
                 <p className="text-[#99CCD9] mb-6">For large organizations</p>
                 <div className="mb-8">
                   <span className="text-5xl font-bold text-[#EEEEEE]">Custom</span>
