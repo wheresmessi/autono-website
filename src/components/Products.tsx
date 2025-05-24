@@ -197,16 +197,16 @@ const Products = () => {
           {/* Animated Rings */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
             {/* Middle Ring */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/20 rounded-full animate-spin-reverse-slow" style={{ width: '700px', height: '700px' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/20 rounded-full animate-spin-reverse-slow" style={{ width: '600px', height: '600px' }}></div>
             
             {/* Outer Ring */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/10 rounded-full animate-spin-slower" style={{ width: '1000px', height: '1000px' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/10 rounded-full animate-spin-slower" style={{ width: '800px', height: '800px' }}></div>
             
             {/* Revolving Elements */}
             {[...Array(16)].map((_, i) => {
               const angle = (i * 22.5 + rotation) % 360;
               const radians = (angle * Math.PI) / 180;
-              const radius = 350 + (i % 4) * 200; // More spread out
+              const radius = 300 + (i % 4) * 150; // Reduced radius and spread
               const x = radius * Math.cos(radians);
               const y = radius * Math.sin(radians);
               const size = 6 + (i % 4);
@@ -233,7 +233,7 @@ const Products = () => {
           
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full z-10">
             {solutions.map((item) => {
-              const radius = 400 + (item.orbit - 1) * 250;
+              const radius = 300 + (item.orbit - 1) * 200; // Reduced radius
               const rotatedAngle = (item.angle + rotation) % 360;
               const radians = (rotatedAngle * Math.PI) / 180;
               const x = radius * Math.cos(radians);
@@ -263,7 +263,7 @@ const Products = () => {
             {[...Array(8)].map((_, i) => {
               const angle = (i * 45 + rotation * 1.5) % 360;
               const radians = (angle * Math.PI) / 180;
-              const radius = 400 + (i % 4) * 200;
+              const radius = 300 + (i % 4) * 150; // Reduced radius and spread
               const x = radius * Math.cos(radians);
               const y = radius * Math.sin(radians);
               const size = 8 + (i % 3) * 2;
