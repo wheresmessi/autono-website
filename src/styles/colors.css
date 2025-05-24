@@ -12,7 +12,8 @@
     /* Text Colors */
     --color-text-primary: #000000;      /* Standard readable black */
     --color-text-secondary: #2E3C4B;    /* Heading/dark slate blue for contrast */
-    --color-text-muted: #919191;        /* Muted grey from Interactive Border */
+    --color-text-muted: #E0E0E0;
+    --color-text-muted2: #919191;
     
     /* Heading Colors */
     --color-heading-primary: #2E3C4B;   /* Strong branding */

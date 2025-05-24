@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/colors.css';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,18 @@ const Header: React.FC = () => {
     }
   };
 
+  const scrollToAbout = () => {
+    if (location.pathname !== '/') {
+      window.location.href = '/#about';
+      return;
+    }
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -35,13 +49,13 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img
               src="/assets/image.png"
               alt="Autono Logo"
               className="h-8 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Right side navigation and buttons */}
           <div className="flex items-center justify-end flex-1 space-x-8">
@@ -60,20 +74,19 @@ const Header: React.FC = () => {
               transition-all duration-300
               w-full md:w-auto
             `}>
-              <a 
-                href="#vehicles" 
+              <Link 
+                to="/products" 
                 className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Products
-              </a>
-              <a 
-                href="#about" 
-                className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </Link>
+              <button 
+                onClick={scrollToAbout}
+                className="text-sm font-medium text-white transition-colors duration-200 hover:text-[#99CCD9] w-full md:w-auto text-left"
               >
                 About
-              </a>
+              </button>
             </nav>
 
             {/* Contact Button */}

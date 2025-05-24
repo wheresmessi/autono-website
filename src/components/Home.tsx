@@ -142,7 +142,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, of
       />
       <div className="flex-1">
         <h4 className="text-lg font-semibold mb-2" style={{ color: 'var(--color-secondary)' }}>{name}</h4>
-        <p style={{ color: 'var(--color-text-muted)' }}>{text}</p>
+        <p style={{ color: 'var(--color-text-muted2)' }}>{text}</p>
       </div>
     </div>
     <div className="absolute -top-2 -right-2 text-4xl" style={{ color: 'var(--color-secondary)', opacity: 0.2 }}>"</div>
@@ -235,7 +235,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* About Us Section */}
-      <section className="min-h-screen flex items-center py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
+      <section id="about" className="min-h-screen flex items-center py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <TextContainer>
