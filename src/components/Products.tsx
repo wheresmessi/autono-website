@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import TextContainer from './shared/TextContainer';
 
 interface OrbitItem {
@@ -10,73 +10,39 @@ interface OrbitItem {
 }
 
 const Products = () => {
+  const vantaRef = useRef<HTMLDivElement | null>(null);
+  const [vantaEffect, setVantaEffect] = React.useState<{ destroy: () => void } | null>(null);
   const [rotation, setRotation] = React.useState(0);
+
+  useEffect(() => {
+    if (!vantaEffect && window.VANTA) {
+      setVantaEffect(
+        window.VANTA.GLOBE({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x2e3c4b,
+          color2: 0xea762c,
+          size: 0.90,
+          backgroundColor: 0x307689
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       setRotation(prev => (prev + 0.2) % 360);
     }, 50);
     return () => clearInterval(interval);
-  }, []);
-  
-  // Add custom animations to global styles
-  React.useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes spin-slow {
-        from { transform: translate(-50%, -50%) rotate(0deg); }
-        to { transform: translate(-50%, -50%) rotate(360deg); }
-      }
-
-      /* Spin Slower Animation */
-      @keyframes spin-slower {
-        from { transform: translate(-50%, -50%) rotate(0deg); }
-        to { transform: translate(-50%, -50%) rotate(-360deg); }
-      }
-
-      /* Float Animation */
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-      }
-
-      /* Float Reverse Animation */
-      @keyframes float-reverse {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(10px); }
-      }
-
-      /* Pulse Animation */
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-      }
-
-      /* Animation Classes */
-      .animate-spin-slow {
-        animation: spin-slow 20s linear infinite;
-      }
-      .animate-spin-slower {
-        animation: spin-slower 25s linear infinite;
-      }
-      .animate-spin-reverse-slow {
-        animation: spin-slower 30s linear infinite;
-      }
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-      .animate-float-reverse {
-        animation: float-reverse 8s ease-in-out infinite;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    // Cleanup function
-    return () => {
-      if (style.parentNode) {
-        document.head.removeChild(style);
-      }
-    };
   }, []);
 
   const features = [
@@ -112,16 +78,18 @@ const Products = () => {
   return (
     <div style={{ backgroundColor: 'var(--color-background-dark)' }}>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-primary)] min-h-screen flex items-center">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal"
-              style={{ color: 'var(--color-background-secondary)' }}>
+      <section 
+        ref={vantaRef}
+        className="relative min-h-screen flex items-center"
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-white">
             The Smart Force Behind Every Construction Project
           </h2>
-          <p className="text-xl md:text-2xl mb-10 font-medium" style={{ color: 'var(--color-primary-light)' }}>
+          <p className="text-xl md:text-2xl mb-10 font-medium text-gray-200">
             Supporting You with Powerful, Intelligent Project Management Solutions
           </p>
-          <button className="relative bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+          <button className="relative bg-[var(--color-button-secondary)] hover:bg-[var(--color-focus)] text-[var(--color-text-muted)] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
             <span className="relative z-10">Book a Demo</span>
           </button>
         </div>
@@ -178,6 +146,7 @@ const Products = () => {
         </div>
       </section>
 
+      {/* Our Solutions Section */}
       {/* Our Solutions Section */}
       <section className="min-h-screen py-32 relative overflow-hidden flex items-center justify-center" 
                style={{ backgroundColor: 'var(--color-background-secondary)' }}>
