@@ -1,67 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import '../styles/colors.css';
 import '../styles/carousel.css';
-
-const TextContainer = ({ children }: { children: React.ReactNode }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = React.useState(false);
-  const [hasAnimated, setHasAnimated] = React.useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setIsVisible(true);
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
-  return (
-    <div className="relative pl-8" ref={containerRef}>
-      <div 
-        className="absolute left-0 top-0 h-full"
-        style={{ 
-          backgroundColor: '#EA762C',
-          width: '2px'
-        }}
-      />
-      <div
-        className="absolute left-[-2px] w-[6px] h-[50px]"
-        style={{
-          backgroundColor: '#EA762C',
-          animation: isVisible ? 'moveBox 1.5s ease forwards' : 'none',
-          bottom: '0',
-        }}
-      />
-      <style>
-        {`
-          @keyframes moveBox {
-            0% {
-              transform: translateY(0);
-            }
-            100% {
-              transform: translateY(-900%);
-            }
-          }
-        `}
-      </style>
-      {children}
-    </div>
-  );
-};
+import TextContainer from './shared/TextContainer';
 
 interface OfferingCardProps {
   title: string;

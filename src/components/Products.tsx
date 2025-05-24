@@ -1,4 +1,5 @@
 import React from 'react';
+import TextContainer from './shared/TextContainer';
 
 interface OrbitItem {
   id: number;
@@ -113,10 +114,10 @@ const Products = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#3C3C3C] via-[#1F1F1F] to-[#3C3C3C] min-h-screen flex items-center">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#EEEEEE] mb-8 animate-fadeInUp">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-[#EEEEEE] animate-fadeInUp">
             The Smart Force Behind Every Construction Project
           </h2>
-          <p className="text-2xl md:text-3xl text-[#99CCD9] mb-12 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+          <p className="text-xl md:text-2xl mb-10 font-medium text-[#99CCD9] animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
             Supporting You with Powerful, Intelligent Project Management Solutions
           </p>
           <button className="relative bg-[#4B8898] hover:bg-[#99CCD9] text-[#1F1F1F] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-[0_0_20px_5px_rgba(75,136,152,0.6)] hover:shadow-[#4B8898]/60">
@@ -127,39 +128,48 @@ const Products = () => {
       </section>
 
       {/* Why Choose Conforce Section */}
-      <section className="min-h-screen bg-gradient-to-b from-[#1F1F1F] to-[#3C3C3C] py-20">
+      <section className="min-h-screen py-20">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-4">
-          <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#EEEEEE]">Why Choose Conforce?</h2>
-            <p className="text-xl text-[#99CCD9]">
-              Trusted by leading construction firms worldwide, Conforce delivers unmatched efficiency and control for your projects.
-            </p>
-            <ul className="space-y-4">
-              {features.map((feature, i) => (
-                <li key={i} className="flex items-start group">
-                  <div className="bg-[#4B8898]/20 p-1.5 rounded-lg group-hover:bg-[#4B8898]/30">
-                    <svg className="h-5 w-5 text-[#99CCD9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="ml-3 text-[#EEEEEE] group-hover:text-white">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button className="bg-[#4B8898] hover:bg-[#99CCD9] text-[#1F1F1F] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1">
-              Get Started
-            </button>
-          </div>
-          <div className="bg-[#3C3C3C]/80 rounded-2xl p-8 border border-[#4B8898]/30 shadow-2xl backdrop-blur-sm">
+          <TextContainer>
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
+                  WHY CHOOSE CONFORCE
+                </h3>
+                <h2 className="text-4xl lg:text-5xl font-light leading-tight">
+                  Trusted by Leading<br />Construction Firms<br />Worldwide
+                </h2>
+              </div>
+              <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
+                Conforce delivers unmatched efficiency and control for your projects, with proven success in optimizing construction operations.
+              </p>
+              <ul className="space-y-4">
+                {features.map((feature, i) => (
+                  <li key={i} className="flex items-start group">
+                    <div className="bg-[var(--color-primary)]/20 p-1.5 rounded-lg group-hover:bg-[var(--color-primary)]/30">
+                      <svg className="h-5 w-5" style={{ color: 'var(--color-text-muted)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="ml-3" style={{ color: 'var(--color-text-muted)' }}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-[var(--color-text-muted)] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1">
+                Get Started
+              </button>
+            </div>
+          </TextContainer>
+          <div className="bg-[var(--color-primary)]/5 rounded-2xl p-8 border border-[var(--color-primary)]/30 shadow-2xl backdrop-blur-sm">
             <div className="space-y-6">
-              <div className="text-5xl font-bold text-[#EEEEEE]">15+</div>
-              <h3 className="text-2xl font-semibold text-[#EEEEEE]">Years of Excellence</h3>
-              <p className="text-[#99CCD9]">Delivering cutting-edge construction solutions worldwide</p>
-              <div className="pt-6 space-y-4 border-t border-[#4B8898]/30">
+              <div className="text-5xl font-bold">15+</div>
+              <h3 className="text-2xl font-semibold">Years of Excellence</h3>
+              <p style={{ color: 'var(--color-text-muted)' }}>Delivering cutting-edge construction solutions worldwide</p>
+              <div className="pt-6 space-y-4 border-t border-[var(--color-primary)]/30">
                 {stats.map((item, i) => (
-                  <div key={i} className="flex justify-between text-[#EEEEEE]">
+                  <div key={i} className="flex justify-between">
                     <span>{item.label}:</span>
-                    <span className="text-[#99CCD9] font-medium">{item.value}</span>
+                    <span style={{ color: 'var(--color-text-muted)' }} className="font-medium">{item.value}</span>
                   </div>
                 ))}
               </div>
