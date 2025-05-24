@@ -186,7 +186,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Features/Vision Section */}
+      {/* About Us Section */}
       <section className="min-h-screen flex items-center py-24" style={{ backgroundColor: 'var(--color-background-dark)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -194,18 +194,19 @@ const Home: React.FC = () => {
               <div className="space-y-8">
                 <div className="space-y-4">
                   <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
-                    VISION
+                    ABOUT US
                   </h3>
                   <h2 className="text-4xl lg:text-5xl font-light leading-tight" style={{ color: 'var(--color-secondary)' }}>
-                    We're Changing the<br />
-                    Way the World Thinks<br />
-                    About Cars
+                    Revolutionizing<br />
+                    Construction &<br />
+                    Warehouse Solutions
                   </h2>
                 </div>
                 <p className="text-lg leading-relaxed max-w-xl" style={{ color: 'var(--color-text-muted)' }}>
-                  Our revolutionary autonomous technology combines advanced AI with cutting-edge hardware
-                  to deliver the safest and most efficient driving experience. We're reimagining mobility
-                  for the future generation.
+                  We are a forward-thinking IT solutions company committed to empowering construction, warehouses, and transportation companies with cutting-edge digital tools. With a deep understanding of industry-specific challenges, we design custom ERP & CRM solutions and offer end-to-end digital services to optimize your operations, reduce costs, and boost productivity.
+                </p>
+                <p className="text-lg leading-relaxed max-w-xl" style={{ color: 'var(--color-text-muted)' }}>
+                  Whether you're looking to digitize your supply chain, improve customer relationships, or enhance your brand online, we deliver scalable, secure solutions that drive results.
                 </p>
               </div>
             </TextContainer>
@@ -213,7 +214,7 @@ const Home: React.FC = () => {
             <div className="relative">
               <img
                 src="/assets/Capture.PNG"
-                alt="Autono Concept Car"
+                alt="Digital Transformation"
                 className="w-full h-auto object-cover rounded-lg"
               />
               <div className="absolute inset-0" style={{ 
