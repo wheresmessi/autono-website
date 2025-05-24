@@ -55,7 +55,7 @@ const TextContainer: React.FC<TextContainerProps> = ({ children }) => {
               transform: translateY(0);
             }
             100% {
-              transform: translateY(-900%);
+              transform: translateY(-1000%);
             }
           }
         `}

@@ -163,9 +163,9 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto -mt-40">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal"
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-medium uppercase"
                 style={{ color: 'var(--color-background-secondary)' }}>
-              Transform today<br />Thrive tomorrow
+              TRANSFORM TODAY<br />THRIVE TOMORROW
             </h1>
             <p className="text-xl md:text-2xl mb-10 font-medium"
                style={{ color: 'var(--color-background-secondary)' }}>
@@ -184,7 +184,7 @@ const Home: React.FC = () => {
                   <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
                     ABOUT US
                   </h3>
-                  <h2 className="text-4xl lg:text-5xl font-light leading-tight" style={{ color: 'var(--color-secondary)' }}>
+                <h2 className="text-4xl lg:text-5xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
                     Revolutionizing<br />
                     Construction &<br />
                     Warehouse Solutions
@@ -216,10 +216,10 @@ const Home: React.FC = () => {
       <section className="py-24" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="space-y-4 mb-16 text-center">
-            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
+            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted2)' }}>
               OFFERINGS
             </h3>
-            <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-secondary)' }}>
+            <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
               Our Services
             </h2>
           </div>
@@ -242,7 +242,7 @@ const Home: React.FC = () => {
             <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
               TRUSTED BY
             </h3>
-            <h2 className="text-3xl lg:text-4xl font-light leading-tight" style={{ color: 'var(--color-secondary)' }}>
+            <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
               Our Clients
             </h2>
           </div>
@@ -260,7 +260,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="lg:pr-8">
               <h2
-                className="text-5xl lg:text-6xl font-light mb-6 leading-tight"
+                className="text-5xl lg:text-6xl font-normal mb-6 leading-tight"
                 style={{ color: 'var(--color-secondary)' }}
               >
                 What Our<br /> Customers Says
