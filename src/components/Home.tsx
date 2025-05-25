@@ -1,8 +1,9 @@
-import React, { useRef} from 'react';
+import React, { useEffect, useRef} from 'react';
 import '../styles/colors.css';
 import '../styles/carousel.css';
 import TextContainer from './shared/TextContainer';
 import { Link } from 'react-router-dom';
+import Map from './shared/Map';
 
 interface OfferingCardProps {
   title: string;
@@ -116,6 +117,26 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, text, image, of
   </div>
 );
 
+const animateCounter = (id: string, target: number, duration: number) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  let start = 0;
+  const increment = target / (duration / 16); // Approx. 60fps
+
+  const updateCounter = () => {
+    start += increment;
+    if (start >= target) {
+      element.textContent = target.toString();
+    } else {
+      element.textContent = Math.floor(start).toString();
+      requestAnimationFrame(updateCounter);
+    }
+  };
+
+  updateCounter();
+};
+
 const Home: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -154,6 +175,25 @@ const Home: React.FC = () => {
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
     }
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.querySelector('.client-stats-section');
+      console.log('Scroll event triggered'); // Debugging
+      if (section) {
+        console.log('Section found:', section.getBoundingClientRect()); // Debugging
+        if (section.getBoundingClientRect().top < window.innerHeight) {
+          console.log('Section is in viewport'); // Debugging
+          animateCounter('client-count', 27, 2000); // Total clients
+          animateCounter('location-count', 15, 2000); // Locations covered
+          window.removeEventListener('scroll', handleScroll); // Remove listener after animation
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -269,7 +309,7 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="space-y-4 mb-12 text-center">
             <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
               TRUSTED BY
@@ -278,8 +318,7 @@ const Home: React.FC = () => {
               Our Clients
             </h2>
           </div>
-          
-          <ClientLogos />
+          <Map />
         </div>
       </section>
 
@@ -437,17 +476,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              {/* Map */}
-              <div className="rounded-xl overflow-hidden border border-[var(--color-primary)]/20">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7663120690635!2d-73.9852776!3d40.7484445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMCc0NC40IkwgNzPCsDU5JzA3LjAiVw!5e0!3m2!1sen!2sus!4v1621523356679!5m2!1sen!2sus"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                />
-              </div>
+             
             </div>
           </div>
         </div>
@@ -456,4 +485,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;
