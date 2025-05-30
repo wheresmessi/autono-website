@@ -59,7 +59,7 @@ const Map: React.FC = () => {
   useEffect(() => {
     if (!mapRef.current) return;
 
-    const getRandomOffset = () => Math.random() * 0.7 - 0.5; // Generates a random value between -0.05 and 0.05
+    const getRandomOffset = () => Math.random()*0.5-0.3 ; // Generates a random value between -0.05 and 0.05
 
     const clientPoints = clientData.map(client => ({
       name: client.city,

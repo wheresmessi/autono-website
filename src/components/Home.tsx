@@ -143,17 +143,17 @@ const Home: React.FC = () => {
   const offerings = [
     {
       title: "Conforce",
-      description: "Enterprise-grade solutions for managing construction projects with real-time monitoring, predictive maintenance, and optimization algorithms.",
+      description: "Conforce brings project management, finance, procurement, and operations into one unified platform—empowering you to manage the entire infrastructure lifecycle with ease.",
       isComingSoon: false
     },
     {
       title: "Transforce",
-      description: "Revolutionary transportation and logistics management system for optimizing fleet operations and delivery networks.",
+      description: "Transforce is an all-in-one ERP solution that helps transport and logistics companies streamline fleet operations, manage shipments, optimize routes, and simplify billing — all through one easy-to-use platform.",
       isComingSoon: true
     },
     {
       title: "Wareforce",
-      description: "Advanced warehouse management system for inventory control, order fulfillment, and supply chain optimization.",
+      description: "Wareforce is a smart warehouse management solution that helps you track inventory, manage stock movements, and optimize storage — ensuring your warehouse runs smoothly and efficiently from end to end.",
       isComingSoon: true
     }
   ];
@@ -255,17 +255,20 @@ const Home: React.FC = () => {
                     ABOUT US
                   </h3>
                 <h2 className="text-4xl lg:text-5xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
-                    Revolutionizing<br />
-                    Construction &<br />
-                    Warehouse Solutions
+                    Why We Do<br />
+                    What We Do<br />
+                    
                   </h2>
                 </div>
                 <p className="text-lg leading-relaxed max-w-xl" style={{ color: 'var(--color-text-muted)' }}>
-                  We are a forward-thinking IT solutions company committed to empowering construction, warehouses, and transportation companies with cutting-edge digital tools. With a deep understanding of industry-specific challenges, we design custom ERP & CRM solutions and offer end-to-end digital services to optimize your operations, reduce costs, and boost productivity.
-                </p>
+                  At snowforce, we believe that industries like construction, warehousing, and logistics 
+deserve technology that understands their challenges and unlocks their full potential. Our mission 
+is to bridge the gap between complex operations and simple, powerful digital solutions.</p>
                 <p className="text-lg leading-relaxed max-w-xl" style={{ color: 'var(--color-text-muted)' }}>
-                  Whether you're looking to digitize your supply chain, improve customer relationships, or enhance your brand online, we deliver scalable, secure solutions that drive results.
-                </p>
+                   We design custom ERP and CRM platforms tailored to your workflows—helping you 
+streamline operations, cut costs, and boost productivity. From supply chain digitization to 
+brand enhancement and customer relationship management, we’re here to make your 
+systems smarter and your growth sustainable. <br /><br />Because when industries run better, businesses thrive—and that’s why we do what we do</p>
               </div>
             </TextContainer>
 
@@ -290,7 +293,7 @@ const Home: React.FC = () => {
               OFFERINGS
             </h3>
             <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
-              Our Services
+              Your Digital Edge Starts Here
             </h2>
           </div>
 
@@ -311,14 +314,14 @@ const Home: React.FC = () => {
       <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="space-y-4 mb-12 text-center">
-            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
+            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted2)' }}>
               TRUSTED BY
             </h3>
             <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
-              Our Clients
+              Our Valued Clients
             </h2>
           </div>
-          <Map />
+          <ClientLogos />
         </div>
       </section>
 
@@ -340,8 +343,9 @@ const Home: React.FC = () => {
                 className="text-lg mb-8 leading-relaxed max-w-md"
                 style={{ color: 'var(--color-text-muted)' }}
               >
-                Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common.
-              </p>
+                We take pride in delivering solutions that make a real difference. Here’s what some of our 
+clients have to say about partnering with us
+                </p>
             </div>
 
             <div className="relative ">

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import TextContainer from './shared/TextContainer';
-
+import Map from './shared/Map';
+import '../styles/colors.css';
 interface OrbitItem {
   id: number;
   name: string;
@@ -259,7 +260,21 @@ const Products = () => {
           </div>
         </div>
       </section>
-
+      {/* End of Our Solutions Section */}
+      
+            <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div className="space-y-4 mb-12 text-center">
+                  <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
+                    TRUSTED BY
+                  </h3>
+                  <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
+                    Our Clients
+                  </h2>
+                </div>
+                <Map />
+              </div>
+            </section>
       {/* Pricing Section */}
       <section className="py-20" style={{ backgroundColor: 'var(--color-background-dark)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
