@@ -239,7 +239,7 @@ const Home: React.FC = () => {
             </h1>
             <p className="text-xl md:text-2xl mb-10 font-medium"
                style={{ color: 'var(--color-background-secondary)' }}>
-              Revolutionising how construction, logistics and warehouse companies work</p>
+              Revolutionising how infrastructure, logistics and warehouse companies work</p>
           </div>
         </div>
       </div>
@@ -251,9 +251,6 @@ const Home: React.FC = () => {
             <TextContainer>
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
-                    ABOUT US
-                  </h3>
                 <h2 className="text-4xl lg:text-5xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
                     Why We Do<br />
                     What We Do<br />
@@ -289,9 +286,6 @@ systems smarter and your growth sustainable. <br /><br />Because when industries
       <section className="py-24" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <div className="space-y-4 mb-16 text-center">
-            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted2)' }}>
-              OFFERINGS
-            </h3>
             <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
               Your Digital Edge Starts Here
             </h2>
@@ -314,9 +308,6 @@ systems smarter and your growth sustainable. <br /><br />Because when industries
       <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="space-y-4 mb-12 text-center">
-            <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted2)' }}>
-              TRUSTED BY
-            </h3>
             <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
               Our Valued Clients
             </h2>
@@ -377,9 +368,6 @@ clients have to say about partnering with us
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="bg-[var(--color-primary)] p-8 rounded-xl shadow-xl">
-              <h3 className="uppercase tracking-wider font-light mb-2" style={{ color: 'var(--color-text-muted)' }}>
-                Contact Us
-              </h3>
               <h2 className="text-4xl font-normal mb-8" style={{ color: 'var(--color-text-muted)' }}>
                 Get In Touch
               </h2>
