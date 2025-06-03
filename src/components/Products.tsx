@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import TextContainer from './shared/TextContainer';
 import Map from './shared/Map';
+import SolutionsSection from './shared/SolutionsSection';
 import '../styles/colors.css';
 interface OrbitItem {
   id: number;
@@ -148,118 +149,7 @@ const Products = () => {
       </section>
 
       {/* Our Solutions Section */}
-      {/* Our Solutions Section */}
-      <section className="min-h-screen py-32 relative overflow-hidden flex items-center justify-center" 
-               style={{ backgroundColor: 'var(--color-background-secondary)' }}>
-        <div className="w-full max-w-6xl mx-auto px-4 relative" style={{ height: '900px' }}>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-2xl z-10 px-4">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal mb-4" style={{ color: 'var(--color-secondary)' }}>
-              Our Solutions
-            </h2>
-            <p className="text-lg md:text-xl mb-8" style={{ color: 'var(--color-text-muted2)' }}>
-              Comprehensive tools that revolve around your construction needs
-            </p>
-            <button className="bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg z-20 relative">
-              Explore Solutions
-              <svg className="h-5 w-5 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-          
-          {/* Animated Rings */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
-            {/* Middle Ring */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/20 rounded-full animate-spin-reverse-slow" style={{ width: '600px', height: '600px' }}></div>
-            
-            {/* Outer Ring */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#4B8898]/10 rounded-full animate-spin-slower" style={{ width: '800px', height: '800px' }}></div>
-            
-            {/* Revolving Elements */}
-            {[...Array(16)].map((_, i) => {
-              const angle = (i * 22.5 + rotation) % 360;
-              const radians = (angle * Math.PI) / 180;
-              const radius = 300 + (i % 4) * 150; // Reduced radius and spread
-              const x = radius * Math.cos(radians);
-              const y = radius * Math.sin(radians);
-              const size = 6 + (i % 4);
-              const delay = i * 0.1;
-              const animationDirection = i % 2 === 0 ? 'animate-float' : 'animate-float-reverse';
-              
-              return (
-                <div
-                  key={`dot-${i}`}
-                  className={`absolute rounded-full bg-[#99CCD9] opacity-30 ${animationDirection}`}
-                  style={{
-                    left: `calc(50% + ${x}px)`,
-                    top: `calc(50% + ${y}px)`,
-                    width: `${size}px`,
-                    height: `${size}px`,
-                    transform: 'translate(-50%, -50%)',
-                    animationDelay: `${delay}s`,
-                    opacity: 0.2 + (i % 4) * 0.2, // Vary opacity
-                  }}
-                />
-              );
-            })}
-          </div>
-          
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full z-10">
-            {solutions.map((item) => {
-              const radius = 300 + (item.orbit - 1) * 200; // Reduced radius
-              const rotatedAngle = (item.angle + rotation) % 360;
-              const radians = (rotatedAngle * Math.PI) / 180;
-              const x = radius * Math.cos(radians);
-              const y = radius * Math.sin(radians);
-              
-              return (
-                <div
-                  key={item.id}
-                  className="absolute text-center transition-all duration-1000 ease-in-out hover:scale-110 hover:z-20"
-                  style={{
-                    left: `calc(50% + ${x}px)`,
-                    top: `calc(50% + ${y}px)`,
-                    transform: 'translate(-50%, -50%)',
-                  }}
-                >
-                  <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-[#4B8898] rounded-full shadow-lg hover:shadow-[#99CCD9]/30 transition-all duration-300 hover:bg-[#5BA8B8] transform hover:rotate-12">
-                    <span className="text-xl md:text-2xl">{item.icon}</span>
-                  </div>
-                  <div className="mt-2 text-sm md:text-base text-[#EEEEEE] font-medium bg-[#3C3C3C]/80 px-2 py-1 rounded-md">
-                    {item.name}
-                  </div>
-                </div>
-              );
-            })}
-            
-            {/* Additional floating elements */}
-            {[...Array(8)].map((_, i) => {
-              const angle = (i * 45 + rotation * 1.5) % 360;
-              const radians = (angle * Math.PI) / 180;
-              const radius = 300 + (i % 4) * 150; // Reduced radius and spread
-              const x = radius * Math.cos(radians);
-              const y = radius * Math.sin(radians);
-              const size = 8 + (i % 3) * 2;
-              
-              return (
-                <div
-                  key={`floating-${i}`}
-                  className="absolute rounded-full bg-[#99CCD9] opacity-30"
-                  style={{
-                    left: `calc(50% + ${x}px)`,
-                    top: `calc(50% + ${y}px)`,
-                    width: `${size}px`,
-                    height: `${size}px`,
-                    transform: 'translate(-50%, -50%)',
-                    animation: i % 2 === 0 ? 'pulse 3s infinite' : 'pulse 4s infinite',
-                    animationDelay: `${i * 0.2}s`,
-                  }}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SolutionsSection />
       {/* End of Our Solutions Section */}
       
             <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
