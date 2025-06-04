@@ -68,19 +68,26 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description, isClick
 };
 
 const ClientLogos: React.FC = () => {
-  const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png";
+  const logos = [
+    "/assets/ndr.PNG",
+    "/assets/rvice.PNG",
+    "/assets/sps.PNG",
+    "/assets/ndr.PNG", 
+    "/assets/rvice.PNG",
+    "/assets/sps.PNG",
+  ];
 
   return (
     <div className="relative overflow-hidden h-[100px] w-full mx-auto">
       <div className="absolute left-0 flex animate-scroll">
-        {[...Array(8)].map((_, index) => (
-          <div 
+        {logos.map((logo, index) => (
+          <div
             key={`logo-${index}`}
             className="flex-shrink-0 w-[300px] flex items-center justify-center px-12"
           >
-            <img 
-              src={logo} 
-              alt="Microsoft Logo" 
+            <img
+              src={logo}
+              alt={`Client Logo ${index + 1}`}
               className="h-[40px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
           </div>
