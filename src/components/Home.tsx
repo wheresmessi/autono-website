@@ -368,7 +368,7 @@ clients have to say about partnering with us
         <div className="absolute -bottom-20 -left-10 z-10">
           <img 
             src="/assets/snowforce-orange.png" 
-            alt="Autono Logo" 
+            alt="Snowforce Logo" 
             className="w-[450px] opacity-60 hover:opacity-80 transition-opacity duration-500 transform hover:scale-105"
           />
         </div>
@@ -433,7 +433,9 @@ clients have to say about partnering with us
             <div className="space-y-12">
               <div>
                 <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-                  Ready to transform your construction operations? Get in touch with our team of experts who are ready to help you implement the perfect solution for your business.
+                  We’re here to help you transform your business with the right technology solutions. Whether you 
+have questions, want a demo, or need support, our team is just a message away. <br /><br />
+Reach out to us today — let’s start building your digital future together.
                 </p>
               </div>
 
