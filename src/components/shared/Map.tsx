@@ -244,40 +244,41 @@ const Map: React.FC = () => {
 			},
 		}));
 
-		chart.current = Highcharts.mapChart(mapRef.current, {
-			chart: {
-				map: indiaData,
-				backgroundColor: 'transparent',
-				height: mapRef.current.offsetHeight,
-			},
-			title: { text: undefined },
-			mapNavigation: {
-				enabled: true,
-				buttonOptions: { verticalAlign: 'bottom' },
-			},
-			plotOptions: {
-				map: {
-					allAreas: true,
-					joinBy: ['st_nm', 'name'],
-					borderColor: '#627C82',
-					borderWidth: 0.5,
-					nullColor: '#203D43',
-					states: { hover: { color: '#4B8898' } },
-				},
-				mappoint: { cursor: 'pointer' },
-			},
-			tooltip: { enabled: false }, // Disable tooltips globally
-			series: [
-				{ type: 'map', name: 'States' },
-				{
-					type: 'mappoint',
-					name: 'Client Locations',
-					data: clientPoints,
-					tooltip: { enabled: false }, // Ensure tooltips are disabled for mappoints
-				},
-			],
-			credits: { enabled: false },
-		});
+    chart.current = Highcharts.mapChart({
+  chart: {
+    renderTo: mapRef.current,
+    map: indiaData,
+    backgroundColor: 'transparent',
+    height: mapRef.current.offsetHeight,
+  },
+  title: { text: undefined },
+  mapNavigation: {
+    enabled: true,
+    buttonOptions: { verticalAlign: 'bottom' },
+  },
+  plotOptions: {
+    map: {
+      allAreas: true,
+      joinBy: ['st_nm', 'name'],
+      borderColor: '#627C82',
+      borderWidth: 0.5,
+      nullColor: '#203D43',
+      states: { hover: { color: '#4B8898' } },
+    },
+    mappoint: { cursor: 'pointer' },
+  },
+  tooltip: { enabled: false }, // Keep this at the top level
+  series: [
+    { type: 'map', name: 'States' },
+    {
+      type: 'mappoint',
+      name: 'Client Locations',
+      data: clientPoints,
+      // Remove the tooltip config from here
+    },
+  ],
+  credits: { enabled: false },
+});
 
 		return () => {
 			chart.current?.destroy();
