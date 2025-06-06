@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import TextContainer from './shared/TextContainer';
 import Map from './shared/Map';
 import SolutionsSection from './shared/SolutionsSection';
 import '../styles/colors.css';
+import TextContainer from './shared/TextContainer';
+import { AttachMoney, Speed, AccountBalance, SupportAgent, TrendingUp } from '@mui/icons-material';
+
 interface OrbitItem {
   id: number;
   name: string;
@@ -104,30 +106,52 @@ const Products = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
-                  WHY CHOOSE CONFORCE
+                  POWERING INFRA GIANTS:
                 </h3>
                 <h2 className="text-4xl lg:text-5xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
-                  Trusted by Leading<br />Construction Firms<br />Worldwide
+                  Complete Control from <br /> Land to Ledger
                 </h2>
               </div>
               <p className="text-lg leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>
                 Conforce delivers unmatched efficiency and control for your projects, with proven success in optimizing construction operations.
               </p>
-              <ul className="space-y-4">
-                {features.map((feature, i) => (
-                  <li key={i} className="flex items-start group">
-                    <div className="bg-[var(--color-primary)]/20 p-1.5 rounded-lg group-hover:bg-[var(--color-primary)]/30">
-                      <svg className="h-5 w-5" style={{ color: 'var(--color-text-muted)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="ml-3" style={{ color: 'var(--color-text-muted)' }}>{feature}</span>
-                  </li>
-                ))}
+              <ul className="flex flex-wrap gap-8">
+                {/* Feature 1 */}
+                <li className="flex items-center gap-4">
+                  <AttachMoney fontSize="large" style={{ color: 'var(--color-secondary)' }} />
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong>Track Costs & Ensure Timely Payments</strong> – Gain full control over budgets, billing, and contractor dues.
+                  </span>
+                </li>
+                {/* Feature 2 */}
+                <li className="flex items-center gap-4">
+                  <Speed fontSize="large" style={{ color: 'var(--color-secondary)' }} />
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong>Streamlined Workflows for Faster Decisions</strong> – Move projects forward with clarity and speed.
+                  </span>
+                </li>
+                {/* Feature 3 */}
+                <li className="flex items-center gap-4">
+                  <AccountBalance fontSize="large" style={{ color: 'var(--color-secondary)' }} />
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong>Robust Financial Module</strong> – From expenses to approvals, you won’t miss a penny.
+                  </span>
+                </li>
+                {/* Feature 4 */}
+                <li className="flex items-center gap-4">
+                  <SupportAgent fontSize="large" style={{ color: 'var(--color-secondary)' }} />
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong>Next-Door Customer Support</strong> – Local, responsive, and ready when you need us.
+                  </span>
+                </li>
+                {/* Feature 5 */}
+                <li className="flex items-center gap-4">
+                  <TrendingUp fontSize="large" style={{ color: 'var(--color-secondary)' }} />
+                  <span style={{ color: 'var(--color-text-muted)' }}>
+                    <strong>Optimize Productivity, Minimize Risk, Drive Growth</strong> – Built to empower infrastructure teams at every level.
+                  </span>
+                </li>
               </ul>
-              <button className="bg-[var(--color-button-primary)] hover:bg-[var(--color-primary-light)] text-[var(--color-text-primary)] font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:-translate-y-1">
-                Get Started
-              </button>
             </div>
           </TextContainer>
           <div className="bg-[var(--color-primary)]/5 rounded-2xl p-8 border border-[var(--color-primary)]/30 shadow-2xl backdrop-blur-sm">
@@ -155,11 +179,11 @@ const Products = () => {
             <section className="py-16" style={{ backgroundColor: 'var(--color-background-secondary)' }}>
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="space-y-4 mb-12 text-center">
-                  <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted)' }}>
-                    TRUSTED BY
+                  <h3 className="uppercase tracking-wider font-light" style={{ color: 'var(--color-text-muted1)' }}>
+                    Trusted Across India 
                   </h3>
                   <h2 className="text-3xl lg:text-4xl font-normal leading-tight" style={{ color: 'var(--color-secondary)' }}>
-                    Our Clients
+                     From Coast to Core, We've Got It Covered
                   </h2>
                 </div>
                 <Map />

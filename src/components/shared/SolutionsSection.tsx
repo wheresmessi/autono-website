@@ -104,7 +104,7 @@ const SolutionsSection = () => {
             className="text-lg leading-relaxed mb-6"
             style={{ color: 'var(--color-text-primary)' }}
           >
-            Comprehensive tools that revolve around your construction needs
+            Comprehensive tools that revolve around your infrastructure needs
           </p>
           <button
             className="font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"

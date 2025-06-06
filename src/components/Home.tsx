@@ -3,7 +3,6 @@ import '../styles/colors.css';
 import '../styles/carousel.css';
 import TextContainer from './shared/TextContainer';
 import { Link } from 'react-router-dom';
-import Map from './shared/Map';
 
 interface OfferingCardProps {
   title: string;
@@ -70,10 +69,16 @@ const OfferingCard: React.FC<OfferingCardProps> = ({ title, description, isClick
 const ClientLogos: React.FC = () => {
   const logos = [
     "/assets/ndr.PNG",
-    "/assets/rvice.PNG",
     "/assets/sps.PNG",
     "/assets/ndr.PNG", 
-    "/assets/rvice.PNG",
+    "/assets/sps.PNG",
+    "/assets/ndr.PNG",
+    "/assets/sps.PNG",
+    "/assets/ndr.PNG", 
+    "/assets/sps.PNG",
+    "/assets/ndr.PNG",
+    "/assets/sps.PNG",
+    "/assets/ndr.PNG", 
     "/assets/sps.PNG",
   ];
 
@@ -81,16 +86,16 @@ const ClientLogos: React.FC = () => {
     <div className="relative overflow-hidden h-[100px] w-full mx-auto">
       <div className="absolute left-0 flex animate-scroll">
         {logos.map((logo, index) => (
-          <div
+            <div
             key={`logo-${index}`}
             className="flex-shrink-0 w-[300px] flex items-center justify-center px-12"
-          >
+            >
             <img
               src={logo}
               alt={`Client Logo ${index + 1}`}
-              className="h-[40px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              className="h-[70px] max-w-[400px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
-          </div>
+            </div>
         ))}
       </div>
     </div>
