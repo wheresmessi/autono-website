@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Map from './shared/Map';
 import SolutionsSection from './shared/SolutionsSection';
 import '../styles/colors.css';
@@ -14,41 +14,6 @@ interface OrbitItem {
 }
 
 const Products = () => {
-  const vantaRef = useRef<HTMLDivElement | null>(null);
-  const [vantaEffect, setVantaEffect] = React.useState<{ destroy: () => void } | null>(null);
-  const [rotation, setRotation] = React.useState(0);
-
-  useEffect(() => {
-    if (!vantaEffect && window.VANTA) {
-      setVantaEffect(
-        window.VANTA.GLOBE({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x2e3c4b,
-          color2: 0xea762c,
-          size: 0.90,
-          backgroundColor: 0x307689
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setRotation(prev => (prev + 0.2) % 360);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
-
   const features = [
     'Proven track record of 98% on-time project delivery',
     'Average 23% reduction in project costs for our clients',
@@ -82,22 +47,49 @@ const Products = () => {
   return (
     <div style={{ backgroundColor: 'var(--color-background-dark)' }}>
       {/* Hero Section */}
-      <section 
-        ref={vantaRef}
-        className="relative min-h-screen flex items-center"
-      >
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-white">
-            The Smart Force Behind Every Construction Project
-          </h2>
-          <p className="text-xl md:text-2xl mb-10 font-medium text-gray-200">
-            Supporting You with Powerful, Intelligent Project Management Solutions
-          </p>
-          <button className="relative bg-[var(--color-button-secondary)] hover:bg-[var(--color-focus)] text-[var(--color-text-muted)] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
-            <span className="relative z-10">Book a Demo</span>
-          </button>
-        </div>
-      </section>
+      <section className="relative min-h-screen flex items-center">
+  {/* Background Image */}
+  <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <img
+      src="/assets/product-bg.jpg"
+      alt="Background"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Overlay with multiple layers for gradient effect */}
+  <div className="absolute inset-0" style={{ backgroundColor: 'var(--color-overlay)' }}></div>
+  
+  {/* Radial gradient overlay */}
+  <div 
+    className="absolute inset-0" 
+    style={{ 
+      background: 'radial-gradient(70% 70% at 50% 50%, transparent 45%, rgba(46, 60, 75, 0.5) 80%, rgba(46, 60, 75, 0.8) 100%)',
+      pointerEvents: 'none'
+    }}
+  ></div>
+  
+  {/* Bottom gradient fade */}
+  <div 
+    className="absolute bottom-0 left-0 right-0 h-64" 
+    style={{ 
+      background: 'linear-gradient(to top, var(--color-background-dark), transparent)'
+    }}
+  ></div>
+
+  {/* Content */}
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-6 font-['Roboto'] font-normal text-white">
+      The Smart Force Behind Every Construction Project
+    </h2>
+    <p className="text-xl md:text-2xl mb-10 font-medium text-gray-200">
+      Streamlining projects, powering decisions, and driving growth for modern infrastructure teams.
+    </p>
+    <button className="relative bg-[var(--color-button-secondary)] hover:bg-[var(--color-focus)] text-[var(--color-text-muted)] font-medium px-12 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+      <span className="relative z-10">Book a Demo</span>
+    </button>
+  </div>
+</section>
 
       {/* Why Choose Conforce Section */}
       <section className="min-h-screen py-20" style={{ backgroundColor: 'var(--color-background-dark)' }}>
